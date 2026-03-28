@@ -10,4 +10,22 @@
 <body>
   <app-root></app-root>
 </body>
+<script>
+let isDark = false;
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeBtn').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+}
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+function handleSubmit() {
+  alert('Thank you! Our team will call you within 2 hours to confirm your visit. 🏠');
+}
+// Close menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+</script>
 </html>
